@@ -1,0 +1,74 @@
+﻿<!-- wp:group {"align":"full"} -->
+<div class="wp-block-group alignfull">
+<!-- wp:html -->
+<div class="as-agrostandart">
+<section id="segments">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Кому поставляем</p>
+      <h2>Работаем со всем рынком — от личного подворья до агрокомбината</h2>
+      <p class="lead">Объём не определяет отношение. Разница только в логистике, документах и глубине сопровождения — рецептура одинаково считается под конкретное хозяйство.</p>
+    </div>
+    <div class="grid g4">
+      <article class="card card--seg reveal" style="--d:0s">
+        <p class="seg-tag">01 · Крупные хозяйства</p>
+        <h3>Сельхозорганизации и агрокомбинаты</h3>
+        <p>Государственные и коммунальные хозяйства, холдинги, племпредприятия. Регулярные поставки по договору, стабильная рецептура, полный пакет сопроводительных документов.</p>
+        <ul>
+          <li>Участие в закупочных процедурах</li>
+          <li>Фиксированная рецептура на сезон</li>
+          <li>График отгрузок и условия оплаты по договору</li>
+          <li>Сопровождение зоотехнической службы хозяйства</li>
+        </ul>
+      </article>
+      <article class="card card--seg reveal" style="--d:.08s">
+        <p class="seg-tag">02 · Средний сегмент</p>
+        <h3>Фермерские хозяйства и КФХ</h3>
+        <p>Хозяйства, которые кормят собственным зерном и меняют структуру рациона по сезону. Небольшие партии без потери в качестве расчёта.</p>
+        <ul>
+          <li>Партии от 1 тонны</li>
+          <li>Пересчёт рецепта при смене сырья</li>
+          <li>Разбор рациона на месте</li>
+        </ul>
+      </article>
+      <article class="card card--seg reveal" style="--d:.16s">
+        <p class="seg-tag">03 · Партнёры</p>
+        <h3>Дилеры и торговые дома</h3>
+        <p>Региональные представители и снабженческие компании. Даём территорию, обучение по продукту и техническую поддержку сделок.</p>
+        <ul>
+          <li>Дилерские условия по объёму</li>
+          <li>Материалы и обучение для менеджеров</li>
+          <li>Подключение технолога к сделке клиента</li>
+        </ul>
+      </article>
+      <article class="card card--seg reveal" style="--d:.24s">
+        <p class="seg-tag">04 · Розница</p>
+        <h3>Личные подсобные хозяйства</h3>
+        <p>Мелкая фасовка для владельцев нескольких голов — через партнёрские точки продаж и дилеров в регионе.</p>
+        <ul>
+          <li>Фасовка под небольшое поголовье</li>
+          <li>Простая инструкция по вводу</li>
+          <li>Консультация по телефону</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+<script>(function(){
+  var root=document.currentScript.closest('.as-agrostandart');
+  if(!root)return;
+  root.classList.add('js-on');
+  var els=[].slice.call(root.querySelectorAll('.reveal'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('is-in');io.unobserve(en.target);}});
+    },{threshold:.16,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el);});
+  } else {
+    els.forEach(function(el){el.classList.add('is-in');});
+  }
+})();</script>
+</div>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->

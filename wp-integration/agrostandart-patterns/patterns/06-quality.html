@@ -1,0 +1,40 @@
+﻿<!-- wp:group {"align":"full"} -->
+<div class="wp-block-group alignfull">
+<!-- wp:html -->
+<div class="as-agrostandart">
+<section id="quality">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Производство и качество</p>
+      <h2>Каждая партия проходит один и тот же путь</h2>
+      <p class="lead" style="margin-top:16px">Собственное производство в Дрибинском районе Могилёвской области. Работаем по утверждённым рецептурам с контролем на входе и на выходе, чтобы состав в мешке совпадал с составом в документе.</p>
+      <p style="margin-top:22px;color:var(--muted);font-size:15.5px">Полный комплект документов на продукцию предоставляем вместе с отгрузкой. Спецификации и сопроводительные документы по конкретному наименованию высылаем по запросу до заключения договора.</p>
+      <a class="btn btn--ghost" style="margin-top:24px" href="#contacts">Запросить документы на продукт</a>
+    </div>
+    <ul class="checks">
+      <li class="reveal" style="--d:0s"><b>Входной контроль сырья</b><span>Принимаем компоненты с документами поставщика и проверяем соответствие заявленным характеристикам.</span></li>
+      <li class="reveal" style="--d:.06s"><b>Весовое дозирование по рецепту</b><span>Ввод каждого компонента фиксируется — рецептура воспроизводится от партии к партии.</span></li>
+      <li class="reveal" style="--d:.12s"><b>Однородность смешивания</b><span>Критично для микрокомпонентов: витамины и микроэлементы должны быть равномерно распределены по всему объёму.</span></li>
+      <li class="reveal" style="--d:.18s"><b>Документы на партию</b><span>Удостоверение о качестве, декларация о соответствии, ветеринарные сопроводительные документы.</span></li>
+      <li class="reveal" style="--d:.24s"><b>Прослеживаемость</b><span>По номеру партии поднимаем состав, сырьё и дату выработки.</span></li>
+    </ul>
+  </div>
+</section>
+<script>(function(){
+  var root=document.currentScript.closest('.as-agrostandart');
+  if(!root)return;
+  root.classList.add('js-on');
+  var els=[].slice.call(root.querySelectorAll('.reveal'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('is-in');io.unobserve(en.target);}});
+    },{threshold:.16,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el);});
+  } else {
+    els.forEach(function(el){el.classList.add('is-in');});
+  }
+})();</script>
+</div>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->

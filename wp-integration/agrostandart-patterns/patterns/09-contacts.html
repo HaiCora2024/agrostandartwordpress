@@ -1,0 +1,61 @@
+﻿<!-- wp:group {"align":"full"} -->
+<div class="wp-block-group alignfull">
+<!-- wp:html -->
+<div class="as-agrostandart">
+<section id="contacts" class="dark on-dark">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Контакты</p>
+      <h2>Свяжитесь с нами</h2>
+      <p class="lead" style="margin-top:16px">На заявки отвечаем в рабочие дни. Если вопрос технический — переключаем сразу на технолога.</p>
+      <dl class="contacts-list">
+        <li><dt>Телефон отдела продаж</dt><dd><a href="tel:+375000000000">+375 (__) ___-__-__</a></dd></li>
+        <li><dt>Электронная почта</dt><dd><a href="mailto:info@agrostandart.by">info@agrostandart.by</a></dd></li>
+        <li><dt>Производство</dt><dd>Могилёвская область, Дрибинский район</dd></li>
+        <li><dt>Юридическое лицо</dt><dd>ЗАО «Агростандарт», УНП ___________</dd></li>
+      </dl>
+    </div>
+    <div>
+      <div class="form-grid">
+        <div class="field"><label for="as-f-name">Имя</label><input id="as-f-name" type="text" placeholder="Как к вам обращаться"></div>
+        <div class="field"><label for="as-f-farm">Хозяйство</label><input id="as-f-farm" type="text" placeholder="Название и район"></div>
+        <div class="field"><label for="as-f-species">Вид животных</label>
+          <select id="as-f-species">
+            <option>КРС — дойное стадо</option>
+            <option>КРС — откорм и молодняк</option>
+            <option>Свиньи</option>
+            <option>Птица</option>
+            <option>Козы и МРС</option>
+            <option>Несколько направлений</option>
+          </select>
+        </div>
+        <div class="field"><label for="as-f-head">Поголовье</label><input id="as-f-head" type="text" placeholder="Примерное количество голов"></div>
+        <div class="field field--full"><label for="as-f-phone">Телефон или e-mail</label><input id="as-f-phone" type="text" placeholder="Как с вами связаться"></div>
+        <div class="field field--full"><label for="as-f-msg">Чем кормите сейчас</label><textarea id="as-f-msg" placeholder="Структура рациона, что используете из добавок, какая задача"></textarea></div>
+      </div>
+      <button class="btn btn--light" style="margin-top:20px" id="as-send">Отправить заявку</button>
+      <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку указанных данных для ответа на обращение.</p>
+    </div>
+  </div>
+</section>
+<script>(function(){
+  var root=document.currentScript.closest('.as-agrostandart');
+  if(!root)return;
+  var sendBtn=root.querySelector('#as-send');
+  if(!sendBtn)return;
+  sendBtn.addEventListener('click',function(){
+    var v=function(id){var el=root.querySelector(id);return el?(el.value||'').trim():'';};
+    var species=root.querySelector('#as-f-species');
+    var body='Имя: '+v('#as-f-name')+'\n'+
+      'Хозяйство: '+v('#as-f-farm')+'\n'+
+      'Вид животных: '+(species?species.value:'')+'\n'+
+      'Поголовье: '+v('#as-f-head')+'\n'+
+      'Контакт: '+v('#as-f-phone')+'\n\nЧем кормят сейчас:\n'+v('#as-f-msg');
+    window.location.href='mailto:info@agrostandart.by?subject='+
+      encodeURIComponent('Заявка на расчёт рациона с сайта')+'&body='+encodeURIComponent(body);
+  });
+})();</script>
+</div>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->

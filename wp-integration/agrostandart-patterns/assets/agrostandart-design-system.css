@@ -1,0 +1,262 @@
+/*
+  Агростандарт — дизайн-система, версия для WordPress.
+  Все правила скопированы 1:1 из production-CSS сайта (agrostandart_site_redesign.html)
+  и обёрнуты в селектор .as-agrostandart, чтобы:
+    1) не утекать в остальную тему (никаких глобальных :root / body / h1);
+    2) не конфликтовать с классами темы или других плагинов (.card, .btn, .grid и т.д.
+       существуют только внутри .as-agrostandart).
+  Каждый паттерн оборачивает свою разметку в <div class="as-agrostandart">, поэтому
+  переменные и стили применяются одинаково к любому паттерну на любой странице.
+*/
+
+.as-agrostandart{
+  /* — фирменные цвета бренда (logoboard АГРОСТАНДАРТ) — */
+  --wine:#590E2B;
+  --orange:#FF5831;
+  --white:#FFFFFF;
+  --gray-brand:#E6E7E8;
+  /* — расширение палитры для UI (оттенки на основе фирменных цветов) — */
+  --wine-deep:#3C0A1C;
+  --wine-ink:#280611;
+  --orange-deep:#E8431D;
+  --paper:#FAF7F5;
+  --sand:#E6E7E8;
+  --ink:#26121A;
+  --muted:#77515E;
+  --line:rgba(89,14,43,.15);
+  --line-soft:rgba(89,14,43,.09);
+  --maxw:1200px;
+  --display:"Rubik","Segoe UI",Arial,sans-serif;
+  --body:"Onest","Segoe UI",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.6;
+  font-variant-numeric:tabular-nums;
+  -webkit-text-size-adjust:100%;
+}
+.as-agrostandart, .as-agrostandart *{box-sizing:border-box}
+.as-agrostandart img{max-width:100%;height:auto;display:block}
+.as-agrostandart a{color:inherit}
+.as-agrostandart :focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.as-agrostandart .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+.as-agrostandart h1,.as-agrostandart h2,.as-agrostandart h3,.as-agrostandart h4{font-family:var(--display);font-weight:800;letter-spacing:-.02em;margin:0;color:var(--ink)}
+.as-agrostandart h1{font-size:clamp(33px,5.2vw,60px);line-height:1.03}
+.as-agrostandart h2{font-size:clamp(26px,3.3vw,40px);line-height:1.08}
+.as-agrostandart h3{font-size:clamp(18px,1.9vw,22px);line-height:1.22;font-weight:700;letter-spacing:-.01em}
+.as-agrostandart p{margin:0 0 1em;color:var(--ink)}
+.as-agrostandart p:last-child{margin-bottom:0}
+.as-agrostandart .lead{font-size:clamp(16.5px,1.5vw,19.5px);color:#4A2C36;max-width:62ch}
+
+/* полосатый знак с упаковки — сквозной структурный элемент */
+.as-agrostandart .bars{height:100%;width:34px;flex:none;background:repeating-linear-gradient(90deg,currentColor 0 4px,transparent 4px 11px)}
+.as-agrostandart .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-deep);margin:0 0 14px;display:flex;align-items:center;gap:11px}
+.as-agrostandart .eyebrow::before{content:"";width:30px;height:11px;background:repeating-linear-gradient(90deg,var(--orange) 0 4px,transparent 4px 10px);flex:none}
+.as-agrostandart .on-dark .eyebrow{color:var(--orange)}
+
+/* ---------- шапка ---------- */
+.as-agrostandart .top{position:sticky;top:0;z-index:60;background:rgba(250,247,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.as-agrostandart .top-in{display:flex;align-items:center;gap:26px;height:76px}
+.as-agrostandart .logo{height:34px;width:auto;max-width:none;object-fit:contain;flex:none}
+.as-agrostandart .nav{margin-left:auto;display:flex;gap:20px;align-items:center}
+.as-agrostandart .nav a{text-decoration:none;font-size:14.5px;font-weight:500;color:var(--wine);padding:6px 0;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.as-agrostandart .nav a:hover{color:var(--orange-deep);border-bottom-color:var(--orange)}
+.as-agrostandart .top .btn{flex:none}
+.as-agrostandart .burger{margin-left:auto;display:none;width:44px;height:44px;border:1px solid var(--line);background:none;border-radius:2px;cursor:pointer;align-items:center;justify-content:center}
+.as-agrostandart .burger span{display:block;width:20px;height:2px;background:var(--wine);position:relative}
+.as-agrostandart .burger span::before,.as-agrostandart .burger span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--wine)}
+.as-agrostandart .burger span::before{top:-6px}
+.as-agrostandart .burger span::after{top:6px}
+
+/* ---------- кнопки ---------- */
+.as-agrostandart .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:2px;font-family:var(--body);font-weight:600;font-size:15px;text-decoration:none;cursor:pointer;border:1px solid var(--orange);background:var(--orange);color:#fff;transition:background .15s,color .15s,border-color .15s}
+.as-agrostandart .btn:hover{background:var(--orange-deep);border-color:var(--orange-deep)}
+.as-agrostandart .btn--ghost{background:none;color:var(--wine);border-color:rgba(89,16,43,.35)}
+.as-agrostandart .btn--ghost:hover{background:rgba(89,16,43,.06);border-color:var(--wine);color:var(--wine)}
+.as-agrostandart .btn--wine{background:var(--wine);border-color:var(--wine);color:#fff}
+.as-agrostandart .btn--wine:hover{background:var(--wine-deep);border-color:var(--wine-deep)}
+.as-agrostandart .btn--light{background:#fff;color:var(--wine);border-color:#fff}
+.as-agrostandart .btn--light:hover{background:var(--sand);border-color:var(--sand)}
+.as-agrostandart .btn--sm{padding:10px 16px;font-size:14px}
+
+/* ---------- секции ---------- */
+.as-agrostandart section{padding:90px 0;border-top:1px solid var(--line-soft)}
+.as-agrostandart section:first-of-type{border-top:0}
+.as-agrostandart .sec-head{max-width:70ch;margin-bottom:44px}
+.as-agrostandart .sec-head p{margin-top:14px}
+.as-agrostandart .dark{background:var(--wine);color:#F0DFE4;border-top:0}
+.as-agrostandart .dark h2,.as-agrostandart .dark h3{color:#fff}
+.as-agrostandart .dark .lead{color:#DEC3CC}
+
+/* ---------- герой ---------- */
+.as-agrostandart .hero{padding:70px 0 86px}
+.as-agrostandart .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center}
+.as-agrostandart .hero h1 em{font-style:normal;color:var(--orange-deep)}
+.as-agrostandart .hero .lead{margin-top:22px}
+.as-agrostandart .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.as-agrostandart .hero-facts{display:flex;flex-wrap:wrap;gap:0 32px;margin-top:38px;padding-top:24px;border-top:1px solid var(--line)}
+.as-agrostandart .fact{padding:6px 0}
+.as-agrostandart .fact b{display:block;font-family:var(--display);font-size:26px;font-weight:800;color:var(--wine)}
+.as-agrostandart .fact span{font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+
+/* мешок + навесная бирка */
+.as-agrostandart .bagbox{position:relative;padding-left:34px}
+.as-agrostandart .bag{width:100%;height:auto;max-width:430px;aspect-ratio:820/1378;object-fit:contain;margin:0 auto;filter:drop-shadow(0 34px 46px rgba(60,10,28,.24))}
+.as-agrostandart .tagcard{position:absolute;left:0;bottom:34px;width:min(330px,72%);background:#fff;border:1px solid var(--line);border-top:5px solid var(--orange);border-radius:2px;box-shadow:0 20px 44px -22px rgba(60,10,28,.5)}
+.as-agrostandart .tagcard-head{padding:16px 20px 0}
+.as-agrostandart .tag-kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.as-agrostandart .tagcard h3{margin:6px 0 0;font-size:19px;color:var(--wine)}
+.as-agrostandart .tag-tabs{display:flex;flex-wrap:wrap;gap:5px;padding:14px 20px 0}
+.as-agrostandart .tab{font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;padding:6px 10px;border-radius:2px;border:1px solid var(--line);background:none;color:var(--muted);cursor:pointer;transition:.15s}
+.as-agrostandart .tab:hover{border-color:var(--orange);color:var(--orange-deep)}
+.as-agrostandart .tab[aria-selected="true"]{background:var(--wine);border-color:var(--wine);color:#fff}
+.as-agrostandart .rows{margin:14px 0 0;padding:0 20px 18px}
+.as-agrostandart .row{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line-soft);font-size:13.5px}
+.as-agrostandart .row:last-child{border-bottom:0}
+.as-agrostandart .row dt{color:var(--muted);margin:0}
+.as-agrostandart .row dd{margin:0;font-family:var(--mono);font-size:12.5px;text-align:right;color:var(--wine)}
+.as-agrostandart .row dd.blank{color:var(--orange-deep)}
+.as-agrostandart .tag-foot{padding:0 20px 18px;font-size:12.5px;line-height:1.45;color:var(--muted)}
+
+/* ---------- карточки ---------- */
+.as-agrostandart .grid{display:grid;gap:20px}
+.as-agrostandart .g2{grid-template-columns:repeat(2,1fr)}
+.as-agrostandart .g3{grid-template-columns:repeat(3,1fr)}
+.as-agrostandart .g4{grid-template-columns:repeat(4,1fr)}
+.as-agrostandart .card{background:#fff;border:1px solid var(--line-soft);border-radius:2px;padding:26px 24px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.as-agrostandart .card:hover{transform:translateY(-4px);border-color:var(--line);box-shadow:0 20px 34px -24px rgba(60,10,28,.4)}
+.as-agrostandart .card h3{margin-bottom:10px;color:var(--wine)}
+.as-agrostandart .card p{font-size:15.5px;color:#4A2C36}
+.as-agrostandart .card ul{margin:14px 0 0;padding:0;list-style:none}
+.as-agrostandart .card li{position:relative;padding-left:17px;font-size:14.5px;color:var(--muted);margin-bottom:7px}
+.as-agrostandart .card li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;background:var(--orange);border-radius:1px}
+.as-agrostandart .card--seg{display:flex;flex-direction:column;border-top:3px solid var(--wine)}
+.as-agrostandart .card--seg .seg-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:12px}
+.as-agrostandart .dark .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16)}
+.as-agrostandart .dark .card h3{color:#fff}
+.as-agrostandart .dark .card p{color:#DEC3CC}
+.as-agrostandart .dark .card li{color:#D2B4BE}
+.as-agrostandart .dark .card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.32);background:rgba(255,255,255,.09);box-shadow:none}
+
+/* ---------- продукция ---------- */
+.as-agrostandart .prod{display:grid;grid-template-columns:210px 1fr;gap:28px;padding:26px 0;border-bottom:1px solid var(--line-soft);align-items:start}
+.as-agrostandart .prod:first-of-type{border-top:1px solid var(--line)}
+.as-agrostandart .prod h3{color:var(--wine)}
+.as-agrostandart .prod-species{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-deep);margin-top:8px}
+.as-agrostandart .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.as-agrostandart .chip{font-family:var(--mono);font-size:12.5px;padding:6px 11px;border:1px solid var(--line);border-radius:2px;color:var(--wine);background:#fff;transition:border-color .15s,color .15s}
+.as-agrostandart .chip:hover{border-color:var(--orange);color:var(--orange-deep)}
+
+/* ---------- процесс ---------- */
+.as-agrostandart .steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.18)}
+.as-agrostandart .step{background:var(--wine);padding:26px 24px;counter-increment:s;transition:background .2s}
+.as-agrostandart .step:hover{background:var(--wine-deep)}
+.as-agrostandart .step::before{content:counter(s,decimal-leading-zero);display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--orange);margin-bottom:12px}
+.as-agrostandart .step h3{font-size:18.5px;margin-bottom:8px}
+.as-agrostandart .step p{font-size:14.5px;color:#DEC3CC;margin:0}
+
+/* ---------- качество ---------- */
+.as-agrostandart .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.as-agrostandart .checks{margin:0;padding:0;list-style:none}
+.as-agrostandart .checks li{position:relative;padding:14px 0 14px 34px;border-bottom:1px solid var(--line-soft);font-size:15.5px}
+.as-agrostandart .checks li::before{content:"";position:absolute;left:0;top:19px;width:16px;height:16px;border:2px solid var(--wine);border-radius:2px}
+.as-agrostandart .checks li::after{content:"";position:absolute;left:5px;top:23px;width:5px;height:9px;border:solid var(--orange);border-width:0 2px 2px 0;transform:rotate(42deg)}
+.as-agrostandart .checks b{display:block;font-weight:600;color:var(--wine)}
+.as-agrostandart .checks span{color:var(--muted);font-size:14.5px}
+
+/* ---------- о компании ---------- */
+.as-agrostandart .about-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:32px}
+.as-agrostandart .af{background:var(--paper);padding:22px}
+.as-agrostandart .af b{display:block;font-family:var(--display);font-size:21px;color:var(--wine);margin-bottom:4px}
+.as-agrostandart .af span{font-size:14px;color:var(--muted)}
+
+/* ---------- полоса CTA — знак с мешка ---------- */
+.as-agrostandart .band{background:var(--orange);color:#fff;padding:0;border-top:0}
+.as-agrostandart .band-in{display:flex;align-items:stretch;color:var(--wine)}
+.as-agrostandart .band-mid{flex:1;padding:48px 34px;display:flex;gap:32px;align-items:center;justify-content:space-between;flex-wrap:wrap;color:#fff}
+.as-agrostandart .band h2{color:#fff;max-width:22ch;font-size:clamp(23px,2.7vw,33px)}
+.as-agrostandart .band p{margin-top:10px;max-width:52ch;color:rgba(255,255,255,.92);font-size:16px}
+
+/* ---------- форма ---------- */
+.as-agrostandart .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.as-agrostandart .field{display:flex;flex-direction:column;gap:7px}
+.as-agrostandart .field--full{grid-column:1/-1}
+.as-agrostandart label{font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#D2B4BE}
+.as-agrostandart input,.as-agrostandart select,.as-agrostandart textarea{font-family:var(--body);font-size:15.5px;color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.24);border-radius:2px;padding:12px 14px;width:100%}
+.as-agrostandart input::placeholder,.as-agrostandart textarea::placeholder{color:rgba(255,255,255,.45)}
+.as-agrostandart select option{color:#26121A}
+.as-agrostandart textarea{min-height:96px;resize:vertical}
+.as-agrostandart .form-note{font-size:13px;color:#C7A2AE;margin-top:14px}
+.as-agrostandart .contacts-list{margin:0;padding:0;list-style:none}
+.as-agrostandart .contacts-list li{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.as-agrostandart .contacts-list dt{font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--orange);margin-bottom:5px}
+.as-agrostandart .contacts-list dd{margin:0;font-size:16.5px}
+.as-agrostandart .contacts-list a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+.as-agrostandart .contacts-list a:hover{border-bottom-color:var(--orange)}
+
+/* ---------- футер ---------- */
+.as-agrostandart footer{background:var(--wine-ink);color:#C7A2AE;padding:52px 0 30px;font-size:14.5px}
+.as-agrostandart .logo-foot{height:32px;width:auto;max-width:none;object-fit:contain;margin-bottom:16px}
+.as-agrostandart .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+.as-agrostandart .foot-grid h4{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--orange);font-weight:500;margin-bottom:14px}
+.as-agrostandart .foot-grid ul{list-style:none;margin:0;padding:0}
+.as-agrostandart .foot-grid li{margin-bottom:9px}
+.as-agrostandart .foot-grid a{text-decoration:none;color:#C7A2AE}
+.as-agrostandart .foot-grid a:hover{color:#fff}
+.as-agrostandart .foot-bottom{margin-top:36px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:13px;color:#9C7683}
+
+/* ---------- сигнатурные детали и движение ---------- */
+.as-agrostandart .top{transition:box-shadow .25s}
+.as-agrostandart .top-progress{position:absolute;left:0;bottom:-1px;height:2px;width:0%;background:var(--orange);transition:width .08s linear}
+.as-agrostandart .top.scrolled{box-shadow:0 10px 26px -20px rgba(60,10,28,.45)}
+
+.as-agrostandart .regmark{position:absolute;width:15px;height:15px;opacity:.5;pointer-events:none;color:var(--wine)}
+.as-agrostandart .regmark::before,.as-agrostandart .regmark::after{content:"";position:absolute;background:currentColor}
+.as-agrostandart .regmark::before{left:50%;top:0;width:1px;height:100%;transform:translateX(-50%)}
+.as-agrostandart .regmark::after{top:50%;left:0;height:1px;width:100%;transform:translateY(-50%)}
+.as-agrostandart .dark .regmark{color:rgba(255,255,255,.4)}
+
+.as-agrostandart #as-tag-rows{transition:opacity .16s ease}
+
+.as-agrostandart .hero{position:relative;overflow:hidden}
+.as-agrostandart .hero::before{content:"";position:absolute;top:-40px;right:-60px;width:340px;height:220px;background:repeating-linear-gradient(90deg,var(--wine) 0 3px,transparent 3px 13px);opacity:.05;pointer-events:none}
+
+.as-agrostandart.js-on .reveal,.as-agrostandart .js-on .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;transition-delay:var(--d,0s)}
+.as-agrostandart.js-on .reveal.is-in,.as-agrostandart .js-on .reveal.is-in{opacity:1;transform:translateY(0)}
+
+/* ---------- адаптив ---------- */
+@media (max-width:1040px){
+  .as-agrostandart .hero-grid,.as-agrostandart .split{grid-template-columns:1fr;gap:44px}
+  .as-agrostandart .g4{grid-template-columns:repeat(2,1fr)}
+  .as-agrostandart .steps{grid-template-columns:repeat(2,1fr)}
+  .as-agrostandart .foot-grid{grid-template-columns:1fr 1fr}
+  .as-agrostandart .bagbox{padding-left:0;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+  .as-agrostandart .tagcard{position:static;width:100%}
+}
+@media (max-width:860px){
+  .as-agrostandart .nav{position:fixed;inset:76px 0 auto 0;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 20px;display:none;z-index:59}
+  .as-agrostandart .nav.open{display:flex}
+  .as-agrostandart .nav a{padding:13px 0;border-bottom:1px solid var(--line-soft);font-size:16px}
+  .as-agrostandart .nav a:hover{border-bottom-color:var(--line-soft)}
+  .as-agrostandart .burger{display:flex}
+  .as-agrostandart .top .btn{display:none}
+}
+@media (max-width:680px){
+  .as-agrostandart{font-size:16px}
+  .as-agrostandart section{padding:60px 0}
+  .as-agrostandart .wrap{padding:0 18px}
+  .as-agrostandart .g2,.as-agrostandart .g3,.as-agrostandart .g4,.as-agrostandart .steps,.as-agrostandart .form-grid,.as-agrostandart .about-facts,.as-agrostandart .foot-grid,.as-agrostandart .bagbox{grid-template-columns:1fr}
+  .as-agrostandart .prod{grid-template-columns:1fr;gap:12px}
+  .as-agrostandart .hero{padding:48px 0 58px}
+  .as-agrostandart .bars{display:none}
+  .as-agrostandart .band-mid{padding:40px 22px}
+  .as-agrostandart .hero::before{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .as-agrostandart{scroll-behavior:auto}
+  .as-agrostandart *{transition:none!important;animation:none!important}
+}

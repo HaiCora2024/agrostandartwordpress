@@ -1,0 +1,40 @@
+﻿<!-- wp:group {"align":"full"} -->
+<div class="wp-block-group alignfull">
+<!-- wp:html -->
+<div class="as-agrostandart">
+<section id="service" class="dark on-dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Технологическое сопровождение</p>
+      <h2>Технолог приезжает в хозяйство — до поставки, а не после жалобы</h2>
+      <p class="lead">Добавка сама по себе не даёт результата: она работает только в связке с тем, что уже лежит на складе и в траншее. Поэтому разбор рациона — часть работы, а не бонус к отгрузке.</p>
+    </div>
+    <div class="grid g3">
+      <article class="card reveal" style="--d:0s"><h3>Разбор рациона на месте</h3><p>Смотрим фактическую структуру кормления, качество зерна и объёмистых кормов, как раздаётся и что реально съедается.</p></article>
+      <article class="card reveal" style="--d:.08s"><h3>Расчёт рецептуры</h3><p>Собираем состав под вашу сырьевую базу и продуктивность. При смене партии зерна или силоса пересчитываем.</p></article>
+      <article class="card reveal" style="--d:.16s"><h3>Ввод и контроль</h3><p>Настраиваем норму ввода, помогаем с дозированием на кормоцехе, обучаем персонал и остаёмся на связи в первые недели.</p></article>
+    </div>
+    <div class="grid g2" style="margin-top:20px">
+      <article class="card reveal" style="--d:0s"><h3>Считаем в деньгах, а не в процентах протеина</h3><p>Единственный честный измеритель — себестоимость литра молока или килограмма привеса. Перед сделкой показываем расчёт: что вы платите за добавку и что получаете на выходе. Если расчёт не сходится — говорим об этом прямо.</p></article>
+      <article class="card reveal" style="--d:.08s"><h3>Опытная партия перед контрактом</h3><p>Крупному хозяйству не нужно верить на слово. Стартуем с пробной партии на одну группу, фиксируем контрольные показатели и сравниваем с текущей схемой кормления.</p></article>
+    </div>
+  </div>
+</section>
+<script>(function(){
+  var root=document.currentScript.closest('.as-agrostandart');
+  if(!root)return;
+  root.classList.add('js-on');
+  var els=[].slice.call(root.querySelectorAll('.reveal'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('is-in');io.unobserve(en.target);}});
+    },{threshold:.16,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el);});
+  } else {
+    els.forEach(function(el){el.classList.add('is-in');});
+  }
+})();</script>
+</div>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->

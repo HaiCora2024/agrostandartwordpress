@@ -1,0 +1,38 @@
+﻿<!-- wp:group {"align":"full"} -->
+<div class="wp-block-group alignfull">
+<!-- wp:html -->
+<div class="as-agrostandart">
+<section id="process" class="dark on-dark" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Как мы работаем</p>
+      <h2>Путь от заявки до серийной поставки</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal" style="--d:0s"><h3>Заявка и вводные</h3><p>Вид животных, поголовье, продуктивность, чем кормите сейчас. Достаточно телефонного разговора.</p></div>
+      <div class="step reveal" style="--d:.06s"><h3>Анализ рациона и сырья</h3><p>Разбираем структуру кормления и данные по зерну и объёмистым кормам. При необходимости — выезд.</p></div>
+      <div class="step reveal" style="--d:.12s"><h3>Рецептура и расчёт цены</h3><p>Готовим состав, норму ввода и экономику: стоимость на голову в сутки и на единицу продукции.</p></div>
+      <div class="step reveal" style="--d:.18s"><h3>Опытная партия</h3><p>Отгружаем пробный объём на одну группу, фиксируем стартовые показатели.</p></div>
+      <div class="step reveal" style="--d:.24s"><h3>Контроль результата</h3><p>Через 3–4 недели сверяем факт с расчётом. Корректируем ввод или состав.</p></div>
+      <div class="step reveal" style="--d:.3s"><h3>Договор и график</h3><p>Переходим на регулярные поставки с закреплённой рецептурой и графиком отгрузок.</p></div>
+    </div>
+  </div>
+</section>
+<script>(function(){
+  var root=document.currentScript.closest('.as-agrostandart');
+  if(!root)return;
+  root.classList.add('js-on');
+  var els=[].slice.call(root.querySelectorAll('.reveal'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('is-in');io.unobserve(en.target);}});
+    },{threshold:.16,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el);});
+  } else {
+    els.forEach(function(el){el.classList.add('is-in');});
+  }
+})();</script>
+</div>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
