@@ -98,7 +98,9 @@
 }.as-agrostandart .sp-card:hover{border-color:var(--brand); transform:translateY(-2px);}.as-agrostandart .sp-card .shot{height:104px;}.as-agrostandart .sp-card .body{padding:14px 15px 17px;}.as-agrostandart .sp-card strong{display:block; font-family:"Oswald",sans-serif; font-weight:700; font-size:16px; letter-spacing:-.01em; text-transform:uppercase;}.as-agrostandart .sp-card em{
   font-style:normal; display:block; font-family:"Oswald",sans-serif; font-size:10.5px;
   letter-spacing:.09em; text-transform:uppercase; color:var(--ink-faint); margin-top:5px;
-}.as-agrostandart .sp-card.soon{opacity:.72;}/* task grid */.as-agrostandart .tasks{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule);}.as-agrostandart .task{
+}.as-agrostandart .sp-card.soon{opacity:.72;}/* фото-полоса: несколько живых кадров без заголовка, для страниц, где ещё мало фото */.as-agrostandart .photoband{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin:8px 0;}.as-agrostandart .photoband img{width:100%; height:180px; object-fit:cover; border-radius:3px; display:block;}@media (max-width:640px) {.as-agrostandart .photoband{grid-template-columns:1fr;}
+}
+/* task grid */.as-agrostandart .tasks{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule);}.as-agrostandart .task{
   background:var(--ground); padding:22px 22px 24px; cursor:pointer; text-align:left;
   border:0; display:flex; flex-direction:column; gap:8px; transition:background .16s ease;
   text-decoration:none; color:inherit;
