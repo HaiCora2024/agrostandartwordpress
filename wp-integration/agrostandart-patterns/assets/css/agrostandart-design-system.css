@@ -67,6 +67,7 @@
 }.as-agrostandart .nav ul{display:flex; gap:22px; list-style:none; margin:0; padding:0; flex:1;}.as-agrostandart .nav ul a{
   text-decoration:none; font-size:13.5px; font-weight:600; letter-spacing:.03em; text-transform:uppercase;
   color:var(--on-brand); padding:6px 0 6px 12px; border-bottom:2px solid transparent; position:relative;
+  white-space:nowrap;
 }.as-agrostandart .nav ul a::before{content:""; position:absolute; left:0; top:3px; bottom:3px; width:3px; background:var(--brand);}.as-agrostandart .nav ul a:hover{color:var(--brand-bright);}.as-agrostandart .nav .tel{font-family:"Oswald",sans-serif; font-size:13px; font-weight:500; color:var(--on-brand); text-decoration:none; white-space:nowrap;}.as-agrostandart .burger{display:none;}.as-agrostandart .btn{
   display:inline-flex; align-items:center; gap:7px; text-decoration:none; cursor:pointer;
   font-family:"Golos Text",sans-serif; font-size:14.5px; font-weight:600; line-height:1;
@@ -176,24 +177,9 @@
 .as-agrostandart .mobbar a.calc{background:var(--brand); color:var(--on-brand);}
 .as-agrostandart .mobbar-spacer{height:50px;}
 }
-@media (max-width:1000px) {.as-agrostandart .species{grid-template-columns:repeat(3,1fr);}
-.as-agrostandart .tasks,.as-agrostandart .trio,.as-agrostandart .prods{grid-template-columns:repeat(2,1fr);}
-.as-agrostandart .statrow .wrapc{grid-template-columns:repeat(2,1fr);}
-.as-agrostandart .stat{border-right:0; padding-right:12px;}
-.as-agrostandart .proof,.as-agrostandart .exec,.as-agrostandart .expert,.as-agrostandart .formband,.as-agrostandart .phead,.as-agrostandart .split,.as-agrostandart .dl{grid-template-columns:1fr;}
-.as-agrostandart .cycle,.as-agrostandart .cycle.three{grid-template-columns:1fr 1fr;}
-.as-agrostandart .fcols{grid-template-columns:1fr 1fr;}
-.as-agrostandart .pill-wrap{flex-wrap:wrap;}
-.as-agrostandart .pill{flex:1 1 30%;}
-}
-@media (max-width:640px) {.as-agrostandart .wrapc{padding:0 18px;}
-.as-agrostandart .band{padding:52px 0;}
-.as-agrostandart .species,.as-agrostandart .tasks,.as-agrostandart .trio,.as-agrostandart .prods,.as-agrostandart .feat{grid-template-columns:1fr;}
-.as-agrostandart .cycle,.as-agrostandart .cycle.three{grid-template-columns:1fr;}
-.as-agrostandart .cyc{border-right:0; border-bottom:1px solid var(--rule);}
-.as-agrostandart .form{grid-template-columns:1fr;}
-.as-agrostandart .logo .sub,.as-agrostandart .nav .tel{display:none;}
-.as-agrostandart .nav{top:0;}
+/* нав из 5 пунктов + лого + телефон + кнопка физически не помещаются в одну
+   строку без переноса слов раньше, чем на ~1230px — поэтому гамбургер
+   включается заметно выше типичного "мобильного" брейкпоинта */@media (max-width:1260px) {.as-agrostandart .logo .sub,.as-agrostandart .nav .tel{display:none;}
 .as-agrostandart .nav .wrapc{gap:14px; flex-wrap:wrap;}
 .as-agrostandart .logo{margin-right:0; flex:1;}
 .as-agrostandart .burger{
@@ -210,9 +196,26 @@
     margin-top:6px; border-top:1px solid rgba(251,242,227,.12);
   }
 .as-agrostandart .nav ul.open{display:flex;}
-.as-agrostandart .nav ul a{padding:13px 0 13px 12px; border-bottom:1px solid rgba(251,242,227,.1);}
+.as-agrostandart .nav ul a{padding:13px 0 13px 12px; border-bottom:1px solid rgba(251,242,227,.1); white-space:normal;}
 .as-agrostandart .nav ul a:last-child{border-bottom:0;}
 .as-agrostandart .nav .btn{order:4;}
+}
+@media (max-width:1000px) {.as-agrostandart .species{grid-template-columns:repeat(3,1fr);}
+.as-agrostandart .tasks,.as-agrostandart .trio,.as-agrostandart .prods{grid-template-columns:repeat(2,1fr);}
+.as-agrostandart .statrow .wrapc{grid-template-columns:repeat(2,1fr);}
+.as-agrostandart .stat{border-right:0; padding-right:12px;}
+.as-agrostandart .proof,.as-agrostandart .exec,.as-agrostandart .expert,.as-agrostandart .formband,.as-agrostandart .phead,.as-agrostandart .split,.as-agrostandart .dl{grid-template-columns:1fr;}
+.as-agrostandart .cycle,.as-agrostandart .cycle.three{grid-template-columns:1fr 1fr;}
+.as-agrostandart .fcols{grid-template-columns:1fr 1fr;}
+.as-agrostandart .pill-wrap{flex-wrap:wrap;}
+.as-agrostandart .pill{flex:1 1 30%;}
+}
+@media (max-width:640px) {.as-agrostandart .wrapc{padding:0 18px;}
+.as-agrostandart .band{padding:52px 0;}
+.as-agrostandart .species,.as-agrostandart .tasks,.as-agrostandart .trio,.as-agrostandart .prods,.as-agrostandart .feat{grid-template-columns:1fr;}
+.as-agrostandart .cycle,.as-agrostandart .cycle.three{grid-template-columns:1fr;}
+.as-agrostandart .cyc{border-right:0; border-bottom:1px solid var(--rule);}
+.as-agrostandart .form{grid-template-columns:1fr;}
 .as-agrostandart .util .wrapc{justify-content:flex-start; gap:12px 16px;}
 .as-agrostandart .fcols{grid-template-columns:1fr;}
 .as-agrostandart .expert .body{padding:30px 22px;}
