@@ -122,6 +122,10 @@ button{font:inherit; color:inherit;}
 }
 .btn-primary{background:transparent; color:var(--ink); border-color:var(--brand);}
 .btn-primary:hover{background:var(--brand); color:var(--on-brand);}
+/* .btn-primary по умолчанию рассчитан на светлый фон (тёмный текст) — на тёмных
+   секциях/шапке до наведения его почти не видно, поэтому здесь цвет текста
+   меняется на светлый и без наведения */
+.nav .btn-primary,.band-dark .btn-primary{color:var(--on-brand);}
 .btn-solid{background:var(--brand); color:var(--on-brand); border-color:var(--brand);}
 .btn-solid:hover{background:var(--brand-2); border-color:var(--brand-2);}
 .btn-ghost{background:transparent; color:var(--ink); border-color:var(--rule);}
