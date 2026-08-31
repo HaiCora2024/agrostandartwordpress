@@ -9,8 +9,8 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'AS_PATTERNS_DIR', plugin_dir_path( __FILE__ ) );
-define( 'AS_PATTERNS_URL', plugin_dir_url( __FILE__ ) );
+if ( ! defined( 'AS_PATTERNS_DIR' ) ) define( 'AS_PATTERNS_DIR', plugin_dir_path( __FILE__ ) );
+if ( ! defined( 'AS_PATTERNS_URL' ) ) define( 'AS_PATTERNS_URL', plugin_dir_url( __FILE__ ) );
 
 /**
  * Подключаем шрифты и стили сайта на фронтенде.
