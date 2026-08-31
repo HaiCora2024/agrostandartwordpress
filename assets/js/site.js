@@ -2,6 +2,21 @@
   var y = document.getElementById('as-year');
   if (y) y.textContent = new Date().getFullYear();
 
+  var burger = document.getElementById('as-burger');
+  var navList = document.getElementById('as-nav-list');
+  if (burger && navList) {
+    burger.addEventListener('click', function(){
+      var open = navList.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+    navList.addEventListener('click', function(e){
+      if (e.target.tagName === 'A') {
+        navList.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
   var form = document.getElementById('as-lead-form');
   if (form) {
     form.addEventListener('submit', function(e){
