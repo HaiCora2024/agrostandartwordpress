@@ -16,7 +16,7 @@ if ( ! defined( 'AS_PATTERNS_URL' ) ) define( 'AS_PATTERNS_URL', plugin_dir_url(
  * Подключаем шрифты и стили сайта на фронтенде.
  * Всё живёт внутри .as-agrostandart — глобальные правила темы не трогает.
  */
-add_action( 'wp_enqueue_scripts', function () {
+function as_patterns_enqueue_styles() {
 	wp_enqueue_style(
 		'agrostandart-fonts',
 		'https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Golos+Text:wght@400;500;600;700&display=swap',
@@ -29,6 +29,9 @@ add_action( 'wp_enqueue_scripts', function () {
 		array( 'agrostandart-fonts' ),
 		filemtime( AS_PATTERNS_DIR . 'assets/css/agrostandart-design-system.css' )
 	);
+}
+add_action( 'wp_enqueue_scripts', function () {
+	as_patterns_enqueue_styles();
 	wp_enqueue_script(
 		'agrostandart-site',
 		AS_PATTERNS_URL . 'assets/js/site.js',
@@ -37,6 +40,14 @@ add_action( 'wp_enqueue_scripts', function () {
 		true
 	);
 } );
+
+/**
+ * Те же стили — внутри самого редактора Gutenberg, чтобы предпросмотр
+ * паттернов совпадал с тем, что увидит посетитель на опубликованной
+ * странице (без этого блок "Пользовательский HTML" в редакторе рисует
+ * сырую разметку вообще без CSS плагина).
+ */
+add_action( 'enqueue_block_editor_assets', 'as_patterns_enqueue_styles' );
 
 /**
  * Категория паттернов "Агростандарт" в инструменте вставки блоков.
