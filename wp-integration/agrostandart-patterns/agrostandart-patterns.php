@@ -95,3 +95,21 @@ add_action( 'init', function () {
 		);
 	}
 } );
+
+/**
+ * Шаблон страницы "Агростандарт (без шапки/подвала темы)" — паттерны уже
+ * несут свою полную шапку и подвал, дублировать шапку/подвал темы поверх
+ * них не нужно. Выбирается в редакторе страницы справа, в блоке
+ * "Страница" -> "Шаблон".
+ */
+add_filter( 'theme_page_templates', function ( $templates ) {
+	$templates['agrostandart-blank.php'] = 'Агростандарт (без шапки/подвала темы)';
+	return $templates;
+} );
+add_filter( 'template_include', function ( $template ) {
+	if ( is_page() && get_page_template_slug() === 'agrostandart-blank.php' ) {
+		$custom = AS_PATTERNS_DIR . 'templates/agrostandart-blank.php';
+		if ( file_exists( $custom ) ) return $custom;
+	}
+	return $template;
+} );
