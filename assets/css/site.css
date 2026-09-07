@@ -98,7 +98,7 @@ button{font:inherit; color:inherit;}
 .nav{position:sticky; top:0; z-index:80; background:var(--band-dark-bg); border-bottom:1px solid rgba(251,242,227,.1);}
 .nav .wrapc{display:flex; align-items:center; gap:26px; padding-top:14px; padding-bottom:14px;}
 .logo{display:flex; align-items:center; gap:11px; text-decoration:none; margin-right:6px;}
-.logo .mark-svg{height:29px; width:auto; flex:none;}
+.logo .mark-svg{height:37px; width:auto; flex:none;}
 .logo .sub{
   font-family:"Oswald",sans-serif; font-size:9.5px; font-weight:500; letter-spacing:.12em;
   text-transform:uppercase; color:var(--on-brand-soft); padding-left:11px; border-left:1px solid rgba(251,242,227,.25);
@@ -253,6 +253,14 @@ h3.sub-t{font-size:19px; font-weight:700; letter-spacing:-.01em;}
 .photoband img{width:100%; height:180px; object-fit:cover; border-radius:3px; display:block;}
 @media (max-width:640px){.photoband{grid-template-columns:1fr;}}
 
+/* task groups */
+.task-group{margin-bottom:34px;}
+.task-group:last-child{margin-bottom:0;}
+.group-t{
+  font-family:"Oswald",sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--brand); margin:0 0 14px;
+}
+
 /* task grid */
 .tasks{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule);}
 .task{
@@ -313,6 +321,7 @@ h3.sub-t{font-size:19px; font-weight:700; letter-spacing:-.01em;}
 
 /* three col */
 .trio{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+.trio-4{grid-template-columns:repeat(4,1fr);}
 .tri{display:flex; flex-direction:column; gap:11px;}
 .tri .num{
   font-family:"Oswald",sans-serif; font-size:11px; letter-spacing:.12em; color:var(--amber);
@@ -415,7 +424,7 @@ footer{background:var(--band-dark-bg); color:var(--on-brand); padding:56px 0 26p
   font-family:"Oswald",sans-serif; font-size:11px; color:var(--ink-faint);
 }
 .flogo{display:flex; align-items:center; margin-bottom:14px;}
-.flogo .mark-svg{height:26px; width:auto;}
+.flogo .mark-svg{height:31px; width:auto;}
 
 /* breadcrumbs + product page */
 .crumb{
