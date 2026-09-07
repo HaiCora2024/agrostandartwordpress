@@ -1,0 +1,10 @@
+# Client-confidential source materials (contract, pricing, briefs) — not part of the website
+/Агростандарт/
+/redisingotzakazchika
+/*.docx
+/*каталог*.pdf
+
+# Early design drafts, superseded by site/
+/agrostandart_site_concept.html
+/agrostandart_site_redesign.html
+/design-system.html
