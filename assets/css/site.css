@@ -40,6 +40,8 @@
 }
 
 *{box-sizing:border-box;}
+html{scroll-padding-top:84px;}
+@media (max-width:400px){ html{scroll-padding-top:132px;} }
 body{
   margin:0; background:var(--ground); color:var(--ink);
   font-family:"Golos Text","Helvetica Neue",Arial,sans-serif;
@@ -261,14 +263,17 @@ h3.sub-t{font-size:19px; font-weight:700; letter-spacing:-.01em;}
   text-transform:uppercase; color:var(--brand); margin:0 0 14px;
 }
 
-/* task grid */
-.tasks{display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--rule); border-left:1px solid var(--rule);}
+/* task grid: borders live on the cards themselves (not the grid container),
+   so an under-filled row never draws a line or box past the last real card */
+.tasks{display:grid; grid-template-columns:repeat(3,1fr);}
 .task{
   background:var(--ground); padding:22px 22px 24px; cursor:pointer; text-align:left;
-  border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);
+  border:1px solid var(--rule);
   display:flex; flex-direction:column; gap:8px; transition:background .16s ease;
   text-decoration:none; color:inherit;
 }
+.task:not(:nth-child(3n+1)){margin-left:-1px;}
+.task:nth-child(n+4){margin-top:-1px;}
 .task:hover{background:var(--paper);}
 .task .k{
   font-family:"Oswald",sans-serif; font-size:10.5px; letter-spacing:.1em;
@@ -506,6 +511,9 @@ footer{background:var(--band-dark-bg); color:var(--on-brand); padding:56px 0 26p
 @media (max-width:1000px){
   .species{grid-template-columns:repeat(3,1fr);}
   .tasks,.trio,.prods{grid-template-columns:repeat(2,1fr);}
+  .task{margin-left:0;}
+  .task:nth-child(2n){margin-left:-1px;}
+  .task:nth-child(n+3){margin-top:-1px;}
   .statrow .wrapc{grid-template-columns:repeat(2,1fr);}
   .stat{border-right:0; padding-right:12px;}
   .proof,.exec,.expert,.formband,.phead,.split,.dl{grid-template-columns:1fr;}
@@ -518,6 +526,8 @@ footer{background:var(--band-dark-bg); color:var(--on-brand); padding:56px 0 26p
   .wrapc{padding:0 18px;}
   .band{padding:52px 0;}
   .species,.tasks,.trio,.prods,.feat{grid-template-columns:1fr;}
+  .task{margin-left:0;}
+  .task:nth-child(n+2){margin-top:-1px;}
   .cycle,.cycle.three{grid-template-columns:1fr;}
   .cyc{border-right:0; border-bottom:1px solid var(--rule);}
   .form{grid-template-columns:1fr;}
