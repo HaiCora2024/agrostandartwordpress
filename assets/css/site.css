@@ -96,9 +96,9 @@ button{font:inherit; color:inherit;}
 .util a:hover{color:var(--brand);}
 
 .nav{position:sticky; top:0; z-index:80; background:var(--band-dark-bg); border-bottom:1px solid rgba(251,242,227,.1);}
-.nav .wrapc{display:flex; align-items:center; gap:26px; padding-top:14px; padding-bottom:14px;}
-.logo{display:flex; align-items:center; gap:11px; text-decoration:none; margin-right:6px;}
-.logo .mark-svg{height:37px; width:auto; flex:none;}
+.nav .wrapc{display:flex; align-items:center; gap:26px; padding-top:12px; padding-bottom:12px;}
+.logo{display:flex; align-items:center; gap:13px; text-decoration:none; margin-right:6px;}
+.logo .mark-svg{height:48px; width:auto; flex:none;}
 .logo .sub{
   font-family:"Oswald",sans-serif; font-size:9.5px; font-weight:500; letter-spacing:.12em;
   text-transform:uppercase; color:var(--on-brand-soft); padding-left:11px; border-left:1px solid rgba(251,242,227,.25);
@@ -424,7 +424,7 @@ footer{background:var(--band-dark-bg); color:var(--on-brand); padding:56px 0 26p
   font-family:"Oswald",sans-serif; font-size:11px; color:var(--ink-faint);
 }
 .flogo{display:flex; align-items:center; margin-bottom:14px;}
-.flogo .mark-svg{height:31px; width:auto;}
+.flogo .mark-svg{height:40px; width:auto;}
 
 /* breadcrumbs + product page */
 .crumb{
