@@ -223,14 +223,14 @@ html{scroll-padding-top:84px;}
 .as-agrostandart .pill.soon{opacity:.65;}
 
 .as-agrostandart .statrow{background:var(--band-dark-bg); color:var(--on-brand); padding-top:20px;}
-.as-agrostandart .statrow .wrapc{display:grid; grid-template-columns:repeat(4,1fr); gap:0;}
-.as-agrostandart .stat{padding:24px; text-align:center; border-right:1px solid rgba(251,242,227,.14);}
+.as-agrostandart .statrow .wrapc{display:flex; justify-content:center; flex-wrap:wrap;}
+.as-agrostandart .stat{padding:18px 30px; text-align:center; border-right:1px solid rgba(251,242,227,.14);}
 .as-agrostandart .stat:last-child{border-right:0;}
 .as-agrostandart .stat b{
-  display:block; font-family:"Oswald",sans-serif; font-weight:700; font-size:27px;
+  display:block; font-family:"Oswald",sans-serif; font-weight:700; font-size:22px;
   letter-spacing:-.01em; color:var(--brand-bright); font-variant-numeric:tabular-nums; text-transform:uppercase;
 }
-.as-agrostandart .stat span{font-size:13px; color:var(--on-brand-soft); line-height:1.4; display:block; margin-top:3px;}
+.as-agrostandart .stat span{font-size:12.5px; color:var(--on-brand-soft); line-height:1.4; display:block; margin-top:3px;}
 
 /* species strip */
 .as-agrostandart .species{display:grid; grid-template-columns:repeat(5,1fr); gap:14px;}
@@ -517,7 +517,6 @@ html{scroll-padding-top:84px;}
   .as-agrostandart .task{margin-left:0;}
   .as-agrostandart .task:nth-child(2n){margin-left:-1px;}
   .as-agrostandart .task:nth-child(n+3){margin-top:-1px;}
-  .as-agrostandart .statrow .wrapc{grid-template-columns:repeat(2,1fr);}
   .as-agrostandart .stat{border-right:0;}
   .as-agrostandart .proof,.as-agrostandart .exec,.as-agrostandart .expert,.as-agrostandart .formband,.as-agrostandart .phead,.as-agrostandart .split,.as-agrostandart .dl{grid-template-columns:1fr;}
   .as-agrostandart .cycle,.as-agrostandart .cycle.three{grid-template-columns:1fr 1fr;}
@@ -538,7 +537,7 @@ html{scroll-padding-top:84px;}
   .as-agrostandart .util .wrapc{justify-content:flex-start; gap:12px 16px;}
   .as-agrostandart .fcols{grid-template-columns:1fr;}
   .as-agrostandart .expert .body{padding:30px 22px;}
-  .as-agrostandart .statrow .wrapc{grid-template-columns:1fr 1fr;}
+  .as-agrostandart .stat{flex:1 1 45%; padding:16px;}
   .as-agrostandart .pill-dock{margin-top:-34px;}
   .as-agrostandart .pill{flex:1 1 100%; padding:11px 12px;}
   .as-agrostandart .hero-in{padding:118px 0 70px;}

@@ -223,14 +223,14 @@ h3.sub-t{font-size:19px; font-weight:700; letter-spacing:-.01em;}
 .pill.soon{opacity:.65;}
 
 .statrow{background:var(--band-dark-bg); color:var(--on-brand); padding-top:20px;}
-.statrow .wrapc{display:grid; grid-template-columns:repeat(4,1fr); gap:0;}
-.stat{padding:24px; text-align:center; border-right:1px solid rgba(251,242,227,.14);}
+.statrow .wrapc{display:flex; justify-content:center; flex-wrap:wrap;}
+.stat{padding:18px 30px; text-align:center; border-right:1px solid rgba(251,242,227,.14);}
 .stat:last-child{border-right:0;}
 .stat b{
-  display:block; font-family:"Oswald",sans-serif; font-weight:700; font-size:27px;
+  display:block; font-family:"Oswald",sans-serif; font-weight:700; font-size:22px;
   letter-spacing:-.01em; color:var(--brand-bright); font-variant-numeric:tabular-nums; text-transform:uppercase;
 }
-.stat span{font-size:13px; color:var(--on-brand-soft); line-height:1.4; display:block; margin-top:3px;}
+.stat span{font-size:12.5px; color:var(--on-brand-soft); line-height:1.4; display:block; margin-top:3px;}
 
 /* species strip */
 .species{display:grid; grid-template-columns:repeat(5,1fr); gap:14px;}
@@ -517,7 +517,6 @@ footer{background:var(--band-dark-bg); color:var(--on-brand); padding:56px 0 26p
   .task{margin-left:0;}
   .task:nth-child(2n){margin-left:-1px;}
   .task:nth-child(n+3){margin-top:-1px;}
-  .statrow .wrapc{grid-template-columns:repeat(2,1fr);}
   .stat{border-right:0;}
   .proof,.exec,.expert,.formband,.phead,.split,.dl{grid-template-columns:1fr;}
   .cycle,.cycle.three{grid-template-columns:1fr 1fr;}
@@ -538,7 +537,7 @@ footer{background:var(--band-dark-bg); color:var(--on-brand); padding:56px 0 26p
   .util .wrapc{justify-content:flex-start; gap:12px 16px;}
   .fcols{grid-template-columns:1fr;}
   .expert .body{padding:30px 22px;}
-  .statrow .wrapc{grid-template-columns:1fr 1fr;}
+  .stat{flex:1 1 45%; padding:16px;}
   .pill-dock{margin-top:-34px;}
   .pill{flex:1 1 100%; padding:11px 12px;}
   .hero-in{padding:118px 0 70px;}
