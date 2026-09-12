@@ -224,7 +224,7 @@ html{scroll-padding-top:84px;}
 
 .as-agrostandart .statrow{background:var(--band-dark-bg); color:var(--on-brand); padding-top:20px;}
 .as-agrostandart .statrow .wrapc{display:grid; grid-template-columns:repeat(4,1fr); gap:0;}
-.as-agrostandart .stat{padding:24px 24px 24px 0; border-right:1px solid rgba(251,242,227,.14);}
+.as-agrostandart .stat{padding:24px; text-align:center; border-right:1px solid rgba(251,242,227,.14);}
 .as-agrostandart .stat:last-child{border-right:0;}
 .as-agrostandart .stat b{
   display:block; font-family:"Oswald",sans-serif; font-weight:700; font-size:27px;
@@ -518,7 +518,7 @@ html{scroll-padding-top:84px;}
   .as-agrostandart .task:nth-child(2n){margin-left:-1px;}
   .as-agrostandart .task:nth-child(n+3){margin-top:-1px;}
   .as-agrostandart .statrow .wrapc{grid-template-columns:repeat(2,1fr);}
-  .as-agrostandart .stat{border-right:0; padding-right:12px;}
+  .as-agrostandart .stat{border-right:0;}
   .as-agrostandart .proof,.as-agrostandart .exec,.as-agrostandart .expert,.as-agrostandart .formband,.as-agrostandart .phead,.as-agrostandart .split,.as-agrostandart .dl{grid-template-columns:1fr;}
   .as-agrostandart .cycle,.as-agrostandart .cycle.three{grid-template-columns:1fr 1fr;}
   .as-agrostandart .fcols{grid-template-columns:1fr 1fr;}

@@ -224,7 +224,7 @@ h3.sub-t{font-size:19px; font-weight:700; letter-spacing:-.01em;}
 
 .statrow{background:var(--band-dark-bg); color:var(--on-brand); padding-top:20px;}
 .statrow .wrapc{display:grid; grid-template-columns:repeat(4,1fr); gap:0;}
-.stat{padding:24px 24px 24px 0; border-right:1px solid rgba(251,242,227,.14);}
+.stat{padding:24px; text-align:center; border-right:1px solid rgba(251,242,227,.14);}
 .stat:last-child{border-right:0;}
 .stat b{
   display:block; font-family:"Oswald",sans-serif; font-weight:700; font-size:27px;
@@ -518,7 +518,7 @@ footer{background:var(--band-dark-bg); color:var(--on-brand); padding:56px 0 26p
   .task:nth-child(2n){margin-left:-1px;}
   .task:nth-child(n+3){margin-top:-1px;}
   .statrow .wrapc{grid-template-columns:repeat(2,1fr);}
-  .stat{border-right:0; padding-right:12px;}
+  .stat{border-right:0;}
   .proof,.exec,.expert,.formband,.phead,.split,.dl{grid-template-columns:1fr;}
   .cycle,.cycle.three{grid-template-columns:1fr 1fr;}
   .fcols{grid-template-columns:1fr 1fr;}
