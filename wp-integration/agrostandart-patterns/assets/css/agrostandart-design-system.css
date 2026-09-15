@@ -447,6 +447,19 @@ html{scroll-padding-top:84px;}
   color:var(--ink-faint); font-weight:500; background:var(--paper); border-bottom:1px solid var(--rule); white-space:nowrap;
 }
 .as-agrostandart .tscroll{overflow-x:auto; border:1px solid var(--rule); border-radius:3px; background:var(--ground);}
+
+/* Каталожные таблицы, вставленные как нативный блок WordPress (Table), а не Custom HTML:
+   такой блок в редакторе не наследует CSS-переменные .as-agrostandart, поэтому стиль
+   продублирован с обычными цветами. Класс "tscroll" ставится в редакторе блока Table
+   (Advanced → Additional CSS class); он и оборачивает таблицу, и задаёт её вид. */
+.tscroll{overflow-x:auto; border:1px solid #E7DBC4; border-radius:3px; background:#FBF2E3; margin:0;}
+.tscroll table{width:100%; border-collapse:collapse; font-size:14px; background:#FFFFFF;}
+.tscroll table th,.tscroll table td{text-align:left; padding:10px 13px; border-bottom:1px solid #F0E6D4; font-variant-numeric:tabular-nums; color:#1C1712;}
+.tscroll thead th{
+  font-family:"Oswald",sans-serif; font-size:10px; letter-spacing:.08em; text-transform:uppercase;
+  color:#948C7E; font-weight:500; background:#FFFFFF; border-bottom:1px solid #E7DBC4; white-space:nowrap;
+}
+.tscroll-gap{margin-bottom:16px;}
 .as-agrostandart .split{display:grid; grid-template-columns:1fr 1fr; gap:34px;}
 .as-agrostandart .feat{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rule); border:1px solid var(--rule);}
 .as-agrostandart .feat > div{background:var(--ground); padding:20px 21px 22px; display:flex; flex-direction:column; gap:8px;}
