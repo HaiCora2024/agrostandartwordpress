@@ -32,7 +32,7 @@
       ];
       var body = encodeURIComponent(lines.join('\n'));
       var subject = encodeURIComponent('Заявка на расчёт рациона — сайт agrostandart.by');
-      window.location.href = 'mailto:sales@agrostandart.by?subject=' + subject + '&body=' + body;
+      window.location.href = 'mailto:minsk@agrostandart.by?subject=' + subject + '&body=' + body;
     });
   }
 })();
