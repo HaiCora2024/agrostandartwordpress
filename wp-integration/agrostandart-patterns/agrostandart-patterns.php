@@ -39,7 +39,49 @@ add_action( 'wp_enqueue_scripts', function () {
 		filemtime( AS_PATTERNS_DIR . 'assets/js/site.js' ),
 		true
 	);
+	wp_localize_script( 'agrostandart-site', 'asLead', array(
+		'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+		'nonce'   => wp_create_nonce( 'as_lead_submit' ),
+	) );
 } );
+
+/**
+ * Заявка на расчёт (главная страница, #raschet) — отправляем на сервере
+ * через wp_mail(), а не полагаемся на mailto: у посетителя. JS шлёт сюда
+ * fetch-запрос и при ошибке сам откатывается на mailto: как подстраховку.
+ */
+function as_patterns_handle_lead_submit() {
+	if ( empty( $_POST['nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'as_lead_submit' ) ) {
+		wp_send_json_error( array( 'message' => 'bad_nonce' ), 403 );
+	}
+
+	$name    = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '';
+	$farm    = isset( $_POST['farm'] ) ? sanitize_text_field( wp_unslash( $_POST['farm'] ) ) : '';
+	$animal  = isset( $_POST['animal'] ) ? sanitize_text_field( wp_unslash( $_POST['animal'] ) ) : '';
+	$heads   = isset( $_POST['heads'] ) ? sanitize_text_field( wp_unslash( $_POST['heads'] ) ) : '';
+	$contact = isset( $_POST['contact'] ) ? sanitize_text_field( wp_unslash( $_POST['contact'] ) ) : '';
+	$feed    = isset( $_POST['feed'] ) ? sanitize_textarea_field( wp_unslash( $_POST['feed'] ) ) : '';
+
+	if ( $contact === '' ) {
+		wp_send_json_error( array( 'message' => 'empty' ), 400 );
+	}
+
+	$body = "Имя: $name\nХозяйство: $farm\nВид животных: $animal\nПоголовье: $heads\nТелефон/e-mail: $contact\nЧем кормите сейчас: $feed\n";
+	$headers = array( 'Content-Type: text/plain; charset=UTF-8' );
+	if ( is_email( $contact ) ) {
+		$headers[] = 'Reply-To: ' . $contact;
+	}
+
+	$sent = wp_mail( 'minsk@agrostandart.by', 'Заявка на расчёт рациона — сайт agrostandart.by', $body, $headers );
+
+	if ( $sent ) {
+		wp_send_json_success();
+	} else {
+		wp_send_json_error( array( 'message' => 'mail_failed' ), 500 );
+	}
+}
+add_action( 'wp_ajax_as_lead_submit', 'as_patterns_handle_lead_submit' );
+add_action( 'wp_ajax_nopriv_as_lead_submit', 'as_patterns_handle_lead_submit' );
 
 /**
  * Те же стили — внутри самого редактора Gutenberg, чтобы предпросмотр
