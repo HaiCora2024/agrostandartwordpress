@@ -17,8 +17,8 @@
     });
   }
 
-  var form = document.getElementById('as-lead-form');
-  if (form) {
+  var leadForms = document.querySelectorAll('#as-lead-form, .as-lead-form');
+  leadForms.forEach(function(form){
     form.addEventListener('submit', function(e){
       e.preventDefault();
       var f = new FormData(form);
@@ -45,7 +45,7 @@
           .then(function(r){ return r.json(); })
           .then(function(res){
             if (res && res.success) {
-              form.innerHTML = '<p class="form-sent">Спасибо! Заявка отправлена, мы свяжемся с вами в ближайшее время.</p>';
+              form.innerHTML = '<div class="form-sent"><span class="form-sent-icon">✓</span>Спасибо!<br>Заявка отправлена, мы свяжемся с вами в ближайшее время.</div>';
             } else {
               fallbackMailto();
             }
@@ -56,5 +56,5 @@
         fallbackMailto();
       }
     });
-  }
+  });
 })();
